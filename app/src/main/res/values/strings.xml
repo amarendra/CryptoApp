@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Simple Crypto</string>
+    <string name="response_text">Output is shown below: </string>
+    <string name="action_settings">Settings</string>
+</resources>

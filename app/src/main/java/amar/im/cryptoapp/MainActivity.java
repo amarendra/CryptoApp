@@ -1,15 +1,18 @@
 package amar.im.cryptoapp;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.os.Process;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     public static final String TAG = "CryptoTest";
 
     private EditText mClearTextET, mKeyET;
@@ -54,16 +57,16 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mOutputTV = findViewById(R.id.output_text);
+        mOutputTV = (TextView) findViewById(R.id.output_text);
 
-        mClearTextET = findViewById(R.id.input_clear_text);
+        mClearTextET = (EditText) findViewById(R.id.input_clear_text);
         mClearTextET.setText(KeyHelper.mClearText);
-        mKeyET = findViewById(R.id.input_key_text);
+        mKeyET = (EditText) findViewById(R.id.input_key_text);
         mKeyET.setText(KeyHelper.mKeyString);
 
-        mRG = findViewById(R.id.rbg_choice);
+        mRG = (RadioGroup) findViewById(R.id.rbg_choice);
 
-        mBtn = findViewById(R.id.submit);
+        mBtn = (Button) findViewById(R.id.submit);
 
         run(1); // first run shows the default/hardcoded text values encryption and decryption
 
@@ -73,5 +76,32 @@ public class MainActivity extends Activity {
                 run(getCryptoChoice());
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+//            case R.id.action_settings:
+
+            case R.id.action_about:
+                // popup for some info
+                return true;
+
+            case R.id.action_exit:
+                finish();
+                Process.killProcess(Process.myPid());
+                return true;
+
+            default:
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

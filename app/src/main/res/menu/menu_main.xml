@@ -4,13 +4,15 @@
     tools:context=".MainActivity">
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="0"
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_exit"
+        android:orderInCategory="2"
         android:title="Exit" />
     <item
+        android:orderInCategory="1"
         android:id="@+id/action_about"
         android:title="About" />
 </menu>

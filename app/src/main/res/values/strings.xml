@@ -2,4 +2,8 @@
     <string name="app_name">Simple Crypto</string>
     <string name="response_text">Output is shown below: </string>
     <string name="action_settings">Settings</string>
+    <string name="about_desc">A simple crypto app that just uses Base64 encoding and AES to demonstrate encryption
+        and decryption using a key.\n\n\nIt\'s essentially a work not in progress. The code can be found below:
+        \n\n\n<a href="https://github.com/amarendra/CryptoApp">github.com/amarendra/CryptoApp</a>\n\n\n
+        Use this app in any way way you want. There are no restrictions.</string>
 </resources>

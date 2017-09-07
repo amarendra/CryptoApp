@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "CryptoTest";
@@ -87,7 +88,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-//            case R.id.action_settings:
+            case R.id.action_settings:
+                showToast("Yet to be done!!");
+                return true;
 
             case R.id.action_about:
                 // popup for some info
@@ -103,5 +106,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showToast(String msg) {
+        if (!isFinishing() && null != this) {
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        }
     }
 }
